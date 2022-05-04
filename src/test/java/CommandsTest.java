@@ -16,7 +16,7 @@ public class CommandsTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
-        driver.manage().window().maximize();
+
         driver.findElement(By.xpath("//*[@id=\"input-example\"]/button")).click();
         sleep(5000);
         driver.findElement(By.cssSelector("#input-example > input[type=text]")).isEnabled();
