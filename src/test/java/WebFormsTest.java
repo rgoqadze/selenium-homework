@@ -31,8 +31,8 @@ public class WebFormsTest {
 
         driver.findElement(By.xpath("//*[@id=\"radio-buttons\"]/input[3]")).click();
         WebElement options1 = (WebElement) driver.findElements(By.xpath("//*[@id=\"fruit-selects\"]"));
-        driver.quit();
-       /* Select orange = new Select(options1);
+        //driver.quit();
+        Select orange = new Select(options1);
         List<WebElement> listoptions = orange.getOptions();
         for(WebElement fruitoptions : listoptions)
         if (fruitoptions.getText().contains("Orange"))
@@ -40,6 +40,6 @@ public class WebFormsTest {
         else {
             System.out.println("Orange is not Displayd");
         }
-        driver.quit();*/
+        driver.quit();
     }
 }
