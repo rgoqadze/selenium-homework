@@ -13,12 +13,7 @@ public class SwitchToTest {
 
     WebDriver driver;
 
-    @BeforeClass
-    public void BrowserSetup(){
 
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
 
     @Test
     public void SwitchTo() throws InterruptedException {
