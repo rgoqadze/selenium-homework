@@ -29,7 +29,7 @@ public class Exceptions {
 
         try {
             driver.switchTo().frame(0);
-        } catch (WebDriverException e) {
+        } catch (NoSuchFrameException e) {
             System.out.println(e.getMessage());
         }
 
@@ -40,7 +40,7 @@ public class Exceptions {
         int rowscount = rows.size();
         for (int i = 0; i < rowscount; i++) {
             String row = rows.get(i).getText();
-            if (rows.equals("30")) {
+            if (row.equals("30")) {
                 rows.get(i).click();
             }
 
@@ -80,5 +80,6 @@ public class Exceptions {
 
         driver.quit();
     }
+
 }
 
