@@ -1,25 +1,32 @@
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class FileUploadTest {
     WebDriver driver;
 
-    @BeforeClass
+    @BeforeMethod
     public void BrowserSetup() {
 
-        WebDriverManager.chromedriver().setup();
+        /*WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().maximize();*/
+        driver = new HtmlUnitDriver(BrowserVersion.CHROME,true);
     }
 
     @Test
     public void FileUploud() {
         driver.get("http://the-internet.herokuapp.com/upload ");
-        driver.findElement(By.id("file-upload")).sendKeys("C:\\Users\\rezo gokadze\\Desktop\\gsxr 600\\jpj1.jpg");
+        File path = new File("src/test/resources/6b07ae6d-5096-4671-8b99-249eb8f89858.jpg");
+        driver.findElement(By.id("file-upload")).sendKeys(path.getAbsolutePath());
         WebElement upload = driver.findElement(By.id("file-submit"));
         upload.click();
         JavascriptExecutor js = (JavascriptExecutor) driver;

@@ -56,7 +56,7 @@ public class Exceptions {
         element.click();
 
         try {
-            new WebDriverWait(driver, 4).until(ExpectedConditions.alertIsPresent());
+            //new WebDriverWait(driver, 4).until(ExpectedConditions.alertIsPresent());
             driver.switchTo().alert().accept();
         } catch (NoAlertPresentException e) {
             System.out.println(e.getMessage());
