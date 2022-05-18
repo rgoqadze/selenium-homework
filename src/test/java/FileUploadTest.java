@@ -16,10 +16,10 @@ public class FileUploadTest {
     @BeforeMethod
     public void BrowserSetup() {
 
-        /*WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();*/
-        driver = new HtmlUnitDriver(BrowserVersion.CHROME,true);
+        driver.manage().window().maximize();
+        //driver = new HtmlUnitDriver(BrowserVersion.CHROME,true);
     }
 
     @Test
