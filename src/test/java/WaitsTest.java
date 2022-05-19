@@ -7,17 +7,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-//public class WaitsTest {
-    //@Test
-   /* public void WaitsHomework() {
+
+public class WaitsTest {
+   @Test
+
+ public void WaitsHomework() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new org.openqa.selenium.chrome.ChromeDriver();
         driver.get("https://demoqa.com/progress-bar");
         driver.manage().window().maximize();
         driver.findElement(By.id("startStopButton")).click();
-        WebDriverWait wait = new WebDriverWait(driver,60);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("resetButton")));
         if (element.isDisplayed()){
             System.out.println("Progress Bar Displayd 100%");
@@ -28,4 +32,5 @@ import java.util.concurrent.TimeUnit;
 
         driver.quit();
     }
-}*/
+}
+

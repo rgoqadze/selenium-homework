@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 public class JSexecutor {
 
-    WebDriver driver;
+   static WebDriver driver;
 
     @BeforeMethod
     public void BrowserSetup() {
@@ -23,10 +23,10 @@ public class JSexecutor {
         WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver();
         //driver.manage().window().maximize();
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\rezo gokadze\\Desktop\\chromedriver.exe");
+//       System.setProperty("webdriver.chrome.driver","C:\\Users\\rezo gokadze\\Desktop\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
-        driver = new ChromeDriver(options);
+        options.addArguments("headless");
+        //driver = new ChromeDriver();
     }
     @Test
     public void ItemDelete() throws InterruptedException {
