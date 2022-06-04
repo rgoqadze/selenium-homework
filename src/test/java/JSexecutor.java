@@ -26,7 +26,7 @@ public class JSexecutor {
 //       System.setProperty("webdriver.chrome.driver","C:\\Users\\rezo gokadze\\Desktop\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
-        //driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
     }
     @Test
     public void ItemDelete() throws InterruptedException {
